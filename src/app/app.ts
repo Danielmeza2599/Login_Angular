@@ -8,4 +8,12 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('app-login');
+
+  constructor() {}
+
+
+  ClickLogin() {
+    console.log(`Mostrar formulario de Login`);
+  }
+
 }
