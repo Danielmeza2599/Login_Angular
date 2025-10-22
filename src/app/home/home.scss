@@ -1,0 +1,107 @@
+/* --- Variables de Color (Opcional, pero buena práctica en SCSS) --- */
+:root {
+  --color-primario: #3498db;  /* Azul principal */
+  --color-primario-oscuro: #2980b9;
+  --color-fondo: #f4f7f6;      /* Fondo gris claro */
+  --color-tarjeta: #ffffff;   /* Fondo de las tarjetas */
+  --color-texto-titulo: #2c3e50;
+  --color-texto-cuerpo: #7f8c8d;
+  --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --sombra-tarjeta-hover: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Contenedor Principal --- */
+.home-container {
+  padding: 2rem;
+  background-color: var(--color-fondo);
+  min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la vista */
+  box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+}
+
+/* --- Encabezado --- */
+.home-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home-header h2 {
+  font-size: 2.5rem;
+  color: var(--color-texto-titulo);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.home-header p {
+  font-size: 1.1rem;
+  color: var(--color-texto-cuerpo);
+}
+
+/* --- Grid de Tarjetas --- */
+.dashboard-grid {
+  display: grid;
+  /* Crea columnas responsivas:
+    - Intenta que midan 300px.
+    - Si no caben, se ajustan (1fr).
+    - 'auto-fit' hace que se reorganicen automáticamente.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espacio entre tarjetas */
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el grid */
+}
+
+/* --- Estilo de cada Tarjeta --- */
+.dashboard-card {
+  background-color: var(--color-tarjeta);
+  border-radius: 10px;
+  box-shadow: var(--sombra-tarjeta);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Efecto al pasar el mouse */
+.dashboard-card:hover {
+  transform: translateY(-8px); /* Levanta la tarjeta */
+  box-shadow: var(--sombra-tarjeta-hover);
+}
+
+/* Icono (Emoji o <img>) */
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primario);
+}
+
+.dashboard-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-texto-titulo);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: var(--color-texto-cuerpo);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Botón de la Tarjeta --- */
+.card-btn {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+  background-color: var(--color-primario-oscuro);
+}

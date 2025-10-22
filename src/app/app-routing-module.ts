@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 // 1. Importar los componentes
-import { LoginComponent } from 'src/app/auth/login';
-import { HomeComponent } from './home/home';
+import { login } from './auth/login/login';
+import { Home } from './home/home';
 
 // 2. Definir las rutas
 const routes: Routes = [
   // Ruta para el login
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: login },
   
   // Ruta para la pantalla de inicio
-  { path: 'inicio', component: HomeComponent },
+  { path: 'inicio', component: Home },
   
   // Ruta por defecto: si alguien entra a la raíz,
   // redirígirlo al login.

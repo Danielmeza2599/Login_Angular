@@ -12,8 +12,4 @@ export class App {
   constructor() {}
 
 
-  ClickLogin() {
-    console.log(`Mostrar formulario de Login`);
-  }
-
 }

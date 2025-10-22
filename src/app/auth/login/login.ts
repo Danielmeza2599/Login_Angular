@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component} from '@angular/core';
+// 1. Importar el Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,20 +8,22 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './login.html',
   styleUrl: './login.scss'
 })
-export class Login {
 
-  @Input() loginLable: string = 'Iniciar Sesión';
-  @Input() emailAddress: string = 'Email';
-  @Input() password: string = 'Password';
+export class login {
 
-  @Output() _onClickLogin = new EventEmitter<void>
+  // 2. Inyectar el Router en el constructor
+  //    Angular lo da automáticamente.
+  constructor(private router: Router) { }
 
 
-  constructor (){
-  }
-
-  onClickLogin() {
-    this._onClickLogin.emit();
+ // 3. Define la función login() que se decalro en el (ngSubmit) HTML
+  login() {
+    console.log('Botón de login presionado');
+    
+    // 4. Aquí se realiza la navegación
+    //    Usando el método .navigate() y pasandole un array
+    //    con la ruta a la que se quiera ir (la que se definio en el routing).
+    this.router.navigate(['/inicio']);
   }
 }
 
